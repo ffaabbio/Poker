@@ -7,8 +7,9 @@ export const evaluerMain = (main: Main): number => {
 
         for(let y = 0;y < 5;y++){
             if(main[y]?.valeur === main[i]?.valeur) cpt++;
-            if(cpt === 3) return 30
         }
+        if(cpt === 4) return 60
+        if(cpt === 3) return 30
 
         if(main[i].valeur > max) max = main[i]?.valeur
     }
