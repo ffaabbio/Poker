@@ -16,3 +16,16 @@ describe("evaluerMain", () => {
     expect(evaluerMain(main)).toBe(14);
   });
 });
+
+describe("evaluerMain", () => {
+  it("retourne 30 lorsque la main contient un brelan", () => {
+    const main: Main = [
+      { valeur: 9, enseigne: "trefle" },
+      { valeur: 9, enseigne: "carreau" },
+      { valeur: 9, enseigne: "coeur" },
+      { valeur: 14, enseigne: "pique" },
+      { valeur: 2, enseigne: "trefle" },
+    ]
+    expect(evaluerMain(main)).toBe(30);
+  });
+});
