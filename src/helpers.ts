@@ -1,4 +1,4 @@
-import type {Main, Carte, Enseigne} from "./carte.js"
+import type {Main,} from "./carte.js"
 
 export const retourneLaPlusHauteValeur = (main: Main): number =>{
     let max = 0;
@@ -21,4 +21,12 @@ export const contientGroupeDe = (main: Main, taille: number): boolean => {
         if (compteLesCartesParValeur(main, carte.valeur) === taille) return true;
     }
     return false;
+};
+
+export const estUneCouleur = (main: Main): boolean => {
+    const premiereEnseigne = main[0]?.enseigne;
+    for (const carte of main) {
+        if (carte.enseigne !== premiereEnseigne) return false;
+    }
+    return true;
 };

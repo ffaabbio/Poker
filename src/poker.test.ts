@@ -42,3 +42,16 @@ describe("evaluerMain", () => {
     expect(evaluerMain(main)).toBe(60);
   });
 });
+
+describe("evaluerMain", () => {
+  it("retourne 60 lorsque la main contient un carré", () => {
+    const main: Main = [
+        { valeur: 2, enseigne: "coeur" },
+        { valeur: 7, enseigne: "coeur" },
+        { valeur: 9, enseigne: "coeur" },
+        { valeur: 11, enseigne: "coeur" },
+        { valeur: 13, enseigne: "coeur" },
+    ];
+    expect(evaluerMain(main)).toBe(45);
+  });
+});
