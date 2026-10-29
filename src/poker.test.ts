@@ -1,9 +1,18 @@
 import { describe, it, expect } from "vitest";
+import type { Main } from "./carte.js"
+import { evaluerMain } from "./poker.js"
 
 const addition = (a: number, b: number): number => a + b;
 
-describe("addition", () => {
-  it("additionne deux nombres", () => {
-    expect(addition(2, 3)).toBe(5);
+describe("evaluerMain", () => {
+  it("retourne la valeur de la carte la plus haute lorsqu'il n'y a aucune combinaison", () => {
+    const main: Main = [
+      { valeur: 9, enseigne: "trefle" },
+      { valeur: 8, enseigne: "carreau" },
+      { valeur: 10, enseigne: "coeur" },
+      { valeur: 14, enseigne: "pique" },
+      { valeur: 2, enseigne: "trefle" },
+    ]
+    expect(evaluerMain(main)).toBe(14);
   });
 });
