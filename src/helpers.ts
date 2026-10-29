@@ -30,3 +30,14 @@ export const estUneCouleur = (main: Main): boolean => {
     }
     return true;
 };
+
+const retourneLaPlusBasseValeur = (main: Main): number => {
+    let min = 15;
+    for (const carte of main) {
+        if (carte.valeur < min) min = carte.valeur;
+    }
+    return min;
+};
+
+export const estUneSuite = (main: Main): boolean =>
+    retourneLaPlusHauteValeur(main) - retourneLaPlusBasseValeur(main) === 4;

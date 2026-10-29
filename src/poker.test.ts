@@ -51,7 +51,20 @@ describe("evaluerMain", () => {
         { valeur: 9, enseigne: "coeur" },
         { valeur: 11, enseigne: "coeur" },
         { valeur: 13, enseigne: "coeur" },
-    ];
+    ]
     expect(evaluerMain(main)).toBe(45);
+  });
+});
+
+describe("evaluerMain", () => {
+  it("retourne 60 lorsque la main contient un carré", () => {
+    const main: Main = [
+        { valeur: 5, enseigne: "trefle" },
+        { valeur: 6, enseigne: "carreau" },
+        { valeur: 7, enseigne: "coeur" },
+        { valeur: 8, enseigne: "pique" },
+        { valeur: 9, enseigne: "trefle" },
+    ]
+    expect(evaluerMain(main)).toBe(40);
   });
 });
